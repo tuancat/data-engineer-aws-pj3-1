@@ -62,7 +62,6 @@ DropFields_node1679499304461 = DropFields.apply(
 AccelerometerTrustedZone_node3 = glueContext.getSink(
     path="s3://stedi-lake-house-tuancat-stedi-lakehouse/accelerometer/trusted/",
     connection_type="s3",
-    updateBehavior="UPDATE_IN_DATABASE",
     partitionKeys=[],
     enableUpdateCatalog=True,
     transformation_ctx="AccelerometerTrustedZone_node3",

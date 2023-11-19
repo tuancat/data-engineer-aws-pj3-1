@@ -45,14 +45,7 @@ DropDuplicates_node1679540688547 = DynamicFrame.fromDF(
 CustomerTrustedZone_node3 = glueContext.getSink(
     path="s3://stedi-lake-house-tuancat/customer/trusted/",
     connection_type="s3",
-    updateBehavior="UPDATE_IN_DATABASE",
     partitionKeys=[],
-    enableUpdateCatalog=True,
-    transformation_ctx="CustomerTrustedZone_node3",
 )
-CustomerTrustedZone_node3.setCatalogInfo(
-    catalogDatabase="stedi-lakehouse", catalogTableName="customer_trusted"
-)
-CustomerTrustedZone_node3.setFormat("json")
-CustomerTrustedZone_node3.writeFrame(DropDuplicates_node1679540688547)
+
 job.commit()

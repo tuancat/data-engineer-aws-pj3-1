@@ -52,15 +52,7 @@ DropFields_node1679503544811 = DropFields.apply(
 AmazonS3_node1699746769918 = glueContext.getSink(
     path="s3://stedi-lake-house-tuancat/machine_learning/curated/",
     connection_type="s3",
-    updateBehavior="UPDATE_IN_DATABASE",
     partitionKeys=[],
-    compression="snappy",
-    enableUpdateCatalog=True,
     transformation_ctx="AmazonS3_node1699746769918",
 )
-AmazonS3_node1699746769918.setCatalogInfo(
-    catalogDatabase="stedi-lakehouse", catalogTableName="machine_learning_curated"
-)
-AmazonS3_node1699746769918.setFormat("json")
-AmazonS3_node1699746769918.writeFrame(DropFields_node1679503544811)
 job.commit()
